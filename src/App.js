@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+// import logo from "./logo.svg";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import MakeSearchInput from "./Header";
+import IndexPage from "./darkMode";
+import CatchCountriesApi from "./catchCountriesApi";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <IndexPage />
+      <MakeSearchInput />
+      <CatchCountriesApi />
+      {/* <Routes>
+        {/* <IndexPage /> */}
+      {/* <Route path="/dark" element={<IndexPage />} />
+        <Route path="/search" element={<MakeSearchInput />} />;
+        <Route path="/countries" element={<CatchCountriesApi />} />
+      </Routes> */}
+    </>
   );
 }
 
