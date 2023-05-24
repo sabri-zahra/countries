@@ -1,15 +1,23 @@
 // import logo from "./logo.svg";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import "./App.css";
-import MakeSearchInput from "./Header";
+// import MakeSearchInput from "./Header";
 import IndexPage from "./darkMode";
 import CatchCountriesApi from "./catchCountriesApi";
+import Details from "./Details";
 function App() {
   return (
     <>
-      <IndexPage />
-      <MakeSearchInput />
-      <CatchCountriesApi />
+      <BrowserRouter>
+        <IndexPage />
+        <Routes>
+          <Route path="/" element={<CatchCountriesApi />} />
+          <Route path="/:title" element={<Details />} />
+        </Routes>
+      </BrowserRouter>
+      {/* <IndexPage /> */}
+      {/* <MakeSearchInput /> */}
+      {/* <CatchCountriesApi /> */}
       {/* <Routes>
         {/* <IndexPage /> */}
       {/* <Route path="/dark" element={<IndexPage />} />

@@ -2,6 +2,9 @@ import CatchCountriesApi from "./catchCountriesApi";
 import FilterPage from "./searchSec";
 
 function MakeSearchInput() {
+  const filterByRegion = function (e) {
+    console.log(e.target.value);
+  };
   return (
     <div className="search">
       <input
@@ -9,7 +12,11 @@ function MakeSearchInput() {
         id="search"
         placeholder=" Search for a Country ..."
       ></input>
-      <select class="region" name="region-area">
+      <select
+        class="region"
+        name="region-area"
+        onChange={(e) => filterByRegion(e)}
+      >
         <option value="">Filter by Region</option>
         <option value="Africa">Africa</option>
         <option value="America">America</option>

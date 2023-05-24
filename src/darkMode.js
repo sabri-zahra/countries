@@ -33,14 +33,13 @@ const IndexPage = () => {
       <h2>Where in the world?</h2>
       {darkTheme !== undefined && (
         <label>
-          <i class="bi bi-moon">
-            <input
-              type="checkbox"
-              checked={darkTheme}
-              onChange={handleToggle}
-            />{" "}
-            Dark Mode
-          </i>
+          {/* <i class="bi bi-moon"></i> */}
+          <input
+            type="checkbox"
+            checked={darkTheme}
+            onChange={handleToggle}
+          />{" "}
+          Dark Mode
         </label>
       )}
     </div>

@@ -26,6 +26,7 @@
 
 .cards {
   padding-top: 20px;
+  margin: 10px 20px;
   min-width: 90%;
   /* background-color: #dadedd; */
   min-height: 85%;
@@ -74,4 +75,19 @@
   margin: 0px;
   padding-bottom: 0cm;
   max-height: 20px;
+}
+ul {
+  padding-top: none;
+  margin-top: 0%;
+  list-style: none;
+}
+.detailsButton {
+  height: 30px;
+  box-shadow: 0 0 10px #2f2d2d;
+  border-radius: 8px;
+  border-color: #fff;
+  margin: 40px 30px;
+  padding: 0 0 20px 20px;
+  color: #2f2d2d;
+  /* font-size: 0.7em; */
 }
