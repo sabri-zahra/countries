@@ -4,6 +4,8 @@ import "./App.css";
 // import MakeSearchInput from "./Header";
 import IndexPage from "./darkMode";
 import CatchCountriesApi from "./catchCountriesApi";
+// import Details from "./Details";
+import CountryInfo from "./CountryInfo";
 import Details from "./Details";
 function App() {
   return (
@@ -12,7 +14,8 @@ function App() {
         <IndexPage />
         <Routes>
           <Route path="/" element={<CatchCountriesApi />} />
-          <Route path="/:title" element={<Details />} />
+          <Route path="/:title" element={<CountryInfo />} />
+          {/* <Route path="/:title" element={<Details />} /> */}
         </Routes>
       </BrowserRouter>
       {/* <IndexPage /> */}

@@ -1,0 +1,23 @@
+.btn-back,
+.bordersBtn {
+  outline: none;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px var(--dark-gray);
+  font-weight: 300;
+}
+
+.titr {
+  font-weight: 800;
+}
+
+.border-Coutries {
+  font-weight: 600;
+}
+
+.bordersBtn {
+  width: 100px;
+  margin: 5px;
+  display: inline-block;
+}
