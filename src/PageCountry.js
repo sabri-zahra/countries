@@ -1,7 +1,8 @@
-import { useContext, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
 import "./CountryInfo.css";
+import Borders from "./Borders";
 // import { ThemeContext } from "./API/themeContext";
 
 export default function Country({
@@ -19,6 +20,13 @@ export default function Country({
   lang,
 }) {
   // const ctx = useContext(ThemeContext);
+  const [borderData, setBorderData] = useState(null);
+  const borderHandle = function (e) {
+    console.log(e.target.value);
+    setBorderData(<Borders elem={e.target.value} />);
+    return { borderData };
+  };
+
   return (
     <>
       <Col className="my-4 ">
@@ -72,10 +80,13 @@ export default function Country({
             return (
               <Link state={item} to={`/${item}`}>
                 <button
+                  className="bordersBtn"
+                  onClick={(e) => borderHandle(e)}
                   // className={`bordersBtn ${
                   //   ctx.theme ? " element-dark-mode" : ""
                   // }`}
                   key={index}
+                  value={item}
                 >
                   {item}
                 </button>
