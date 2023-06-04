@@ -14,34 +14,14 @@ import "./CountryInfo.css";
 import Api from "./API/Api";
 import { useEffect, useState } from "react";
 import Country from "./PageCountry";
+import Borders from "./Borders";
 // import { ThemeContext } from "./API/themeContext";
 
 export default function CountryInfo() {
-  let location = useLocation().pathname;
+  let location = useLocation().state;
   const navigate = useNavigate();
   const [result, setResult] = useState();
-  //   const [detailData, setDetailData] = useState(null);
-  //   const [countryData, setCountryData] = useState(null);
-  //   const [countryName, setCountryName] = useState(null);
-  //   const ctx = useContext(ThemeContext);
-  //   useEffect(() => {
-  //     Api(" https://restcountries.com/v3.1/all")
-  //       //   .then((res) => res.json())
-  //       .then((data) => {
-  //         setCountryData(data);
-  //         setCountryName(countryData?.map((item) => item.cca3));
-  //       });
-  //   }, []);
-  location = location.replace("/", "");
-  //   useEffect(() => {
-  //     fetch(`https://restcountries.com/v3.1/name/${location.state}`)
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         console.log(data);
-  //         setDetailData(data);
-  //         // setBordersData(data.borders);
-  //       });
-  //   }, [location.state]);
+
   if (location.includes("%")) {
     location = location.replaceAll("%20", " ");
   }
@@ -51,9 +31,9 @@ export default function CountryInfo() {
     let country = response.filter((item, index) => {
       return item.name.common === location;
     });
-
+    console.log(country);
     country = country[0];
-    const currencyKey = Object.keys(country.currencies)[0];
+    const currencyKey = Object.keys(country.currencies);
     let nativeName = Object.keys(country.name.nativeName);
     nativeName = nativeName[nativeName.length - 1];
 

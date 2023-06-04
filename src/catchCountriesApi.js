@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 function CatchCountriesApi() {
   const [countryData, setCountryData] = useState(null);
   const [filteredData, setFilteredData] = useState(null);
@@ -34,12 +35,18 @@ function CatchCountriesApi() {
     <>
       <div className="search">
         {/* <i class="fa-solid fa-magnifying-glass" style="color: #bdc6d6;"></i> */}
-        <input
-          type="search"
-          id="search"
-          placeholder=" Search for a Country ..."
-          onChange={(e) => filteredByName(e)}
-        ></input>
+        <form className="searchForm">
+          <button type="submit" className="border-0">
+            <FontAwesomeIcon icon={faMagnifyingGlass} className="magnify" />
+          </button>
+          <input
+            type="search"
+            id="search"
+            placeholder=" Search for a Country ..."
+            onChange={(e) => filteredByName(e)}
+          ></input>
+        </form>
+
         <select
           class="region"
           name="region-area"
